@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#EFE6E3">
+  <title>Triunfa Gestadora - Saulibeth Rivas</title>
+  
+  <meta name="description" content="Da a luz el negocio con propósito que tu alma vino a expandir. Un contenedor sagrado de 16 semanas." />
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* 
+      LAYOUT TIPO LMS / PÁGINA DE CURSO 
+      Inspirado en la estructura de la web de Saulibeth, 
+      pero con estética limpia y colores CEF.
+    */
+    
+    body {
+      background-color: var(--color-crema);
+      background-image: radial-gradient(rgba(151, 27, 37, 0.03) 2px, transparent 2px);
+      background-size: 30px 30px;
+    }
+    
+    .course-page-wrapper {
+      padding-top: 100px; /* offset para el header fijo */
+      padding-bottom: 6rem;
+    }
+    
+    .course-layout {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 3rem 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 5rem;
+      align-items: start;
+    }
+    
+    /* --- COLUMNA PRINCIPAL (IZQUIERDA) --- */
+    .course-main {
+      padding-top: 2rem;
+    }
+    
+    .course-category {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-medium);
+      display: block;
+      margin-bottom: 1rem;
+    }
+    
+    .course-title {
+      font-family: var(--font-serif);
+      font-size: clamp(3rem, 5vw, 4.5rem);
+      color: var(--color-vinotinto);
+      font-weight: 600;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .course-excerpt {
+      font-size: 1.25rem;
+      line-height: 1.7;
+      color: var(--text-dark);
+      margin-bottom: 3rem;
+    }
+    
+    /* TABS */
+    .course-tabs-header {
+      display: flex;
+      gap: 2.5rem;
+      border-bottom: 2px solid rgba(151, 27, 37, 0.1);
+      margin-bottom: 3rem;
+    }
+    
+    .course-tab {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-medium);
+      padding-bottom: 1rem;
+      cursor: pointer;
+      position: relative;
+    }
+    
+    .course-tab.active {
+      color: var(--color-vinotinto);
+    }
+    
+    .course-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-rojo);
+    }
+    
+    /* CONTENIDO DEL CURSO */
+    .course-content-box {
+      background: #ffffff;
+      padding: 4rem;
+      border-radius: 4px;
+      box-shadow: 0 10px 40px rgba(151, 27, 37, 0.04);
+    }
+    
+    .course-content-box h3 {
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      color: var(--color-vinotinto);
+      margin: 3rem 0 1.5rem;
+      font-weight: 400;
+    }
+    
+    .course-content-box h3:first-child {
+      margin-top: 0;
+    }
+    
+    .course-content-box p {
+      font-size: 1.15rem;
+      line-height: 1.8;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+    
+    /* DISEÑO EDITORIAL PARA LA DESCRIPCIÓN */
+    .editorial-heading {
+      font-family: var(--font-script);
+      font-size: clamp(3.5rem, 5vw, 4.5rem);
+      color: var(--color-rojo);
+      margin-bottom: 1.5rem;
+      line-height: 1;
+      text-align: center;
+    }
+    
+    .drop-cap::first-letter {
+      font-family: var(--font-serif);
+      font-size: 4.5rem;
+      color: var(--color-vinotinto);
+      float: left;
+      line-height: 0.8;
+      margin-right: 0.8rem;
+      margin-top: 0.2rem;
+    }
+    
+    .highlight-quote {
+      background: linear-gradient(135deg, var(--color-crema) 0%, #f0e6e2 100%);
+      border-left: 4px solid var(--color-vinotinto);
+      padding: 2rem 2.5rem;
+      margin: 2.5rem 0;
+      border-radius: 0 4px 4px 0;
+      font-family: var(--font-serif);
+      font-size: 1.4rem;
+      color: var(--color-vinotinto);
+      font-style: italic;
+      line-height: 1.6;
+    }
+    
+    .author-note {
+      font-size: 1.15rem;
+      color: var(--text-medium);
+      padding: 1.5rem;
+      background: var(--color-nude);
+      border-radius: 4px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+    
+    .elegant-divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(151,27,37,0.2), transparent);
+      margin: 4rem 0;
+    }
+    
+    /* Grid de Checks Atractivo */
+    .check-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    
+    .check-box {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      background: rgba(239, 230, 227, 0.4); /* Crema ultra suave */
+      padding: 1.8rem;
+      border-radius: 4px;
+      border: 1px solid rgba(151, 27, 37, 0.05);
+      transition: transform 0.3s;
+    }
+    
+    .check-box:hover {
+      transform: translateY(-3px);
+      background: rgba(239, 230, 227, 0.7);
+    }
+    
+    .check-box i {
+      color: var(--color-rojo);
+      font-size: 1.2rem;
+      margin-top: 3px;
+    }
+    
+    .check-box p {
+      margin: 0 !important;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    
+    /* --- COLUMNA LATERAL (DERECHA / COMPRA) --- */
+    .course-sidebar {
+      position: relative;
+      margin-top: 2rem;
+    }
+    
+    .purchase-card {
+      background: #ffffff;
+      padding: 2.5rem;
+      border-radius: 4px;
+      box-shadow: 0 15px 50px rgba(151, 27, 37, 0.08);
+      position: sticky;
+      top: 120px;
+    }
+    
+    /* Botón idéntico al de CEF */
+    .btn-elaborated {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--color-vinotinto);
+      color: var(--color-crema);
+      padding: 1.8rem 2rem;
+      border-radius: 2px;
+      text-decoration: none;
+      transition: transform 0.4s, box-shadow 0.4s;
+      position: relative;
+      width: 100%;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 10px 30px rgba(102, 10, 17, 0.25);
+    }
+    
+    .btn-elaborated:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px rgba(102, 10, 17, 0.35);
+      background: #4d0810; /* Vinotinto oscuro en hover */
+    }
+    
+    .btn-elaborated span {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+    }
+    
+    .btn-elaborated-title {
+      font-family: var(--font-body);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .btn-elaborated-price {
+      font-size: 1.5rem;
+      border-left: 1px solid rgba(239, 230, 227, 0.3);
+      padding-left: 1rem;
+    }
+    
+    .btn-elaborated-subtitle {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--color-crema);
+      opacity: 0.9;
+      font-weight: 400;
+      text-align: left;
+    }
+    
+    .details-title {
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+      color: var(--text-dark);
+      border-bottom: 1px solid rgba(151, 27, 37, 0.1);
+      padding-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+    }
+    
+    .details-list {
+      list-style: none;
+    }
+    
+    .details-list li {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+      color: var(--text-medium);
+    }
+    
+    .details-list li i {
+      color: var(--color-rojo);
+      font-size: 1.1rem;
+      width: 20px;
+      text-align: center;
+    }
+    
+    @media (max-width: 1024px) {
+      .course-layout {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .course-sidebar {
+        margin-top: 0;
+      }
+      .purchase-card {
+        position: static;
+      }
+      .course-content-box {
+        padding: 2.5rem;
+      }
+      .bonus-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  
+    /* Final CTA */
+    .gestadora-cta {
+      padding: 10rem 2.5rem;
+      background: var(--color-crema);
+      text-align: center;
+      position: relative;
+    }
+    .gestadora-cta .btn-elaborated {
+      margin: 0 auto;
+      max-width: 400px;
+    }
+</style>
+</head>
+<body>
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <nav class="sidebar" id="sidebar">
+    <button class="sidebar-close" id="sidebarClose">×</button>
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#libro">Mi Libro</a></li>
+      <hr class="sidebar-divider">
+      <li><a href="cursos.html">Cursos</a></li>
+      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="testimonios.html">Testimonios</a></li>
+      <hr class="sidebar-divider">
+      <li><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <header id="mainHeader">
+    <a href="index.html" class="header-logo">
+      <span class="script-name">Saulibeth</span>
+      <span class="serif-subtitle">- Rivas -</span>
+    </a>
+    <div class="header-social">
+      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/@saulibethrivas" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </header>
+
+  <main class="course-page-wrapper">
+    <div class="course-layout">
+      
+      <!-- COLUMNA IZQUIERDA: CONTENIDO -->
+      <div class="course-main">
+        <div class="fade-up">
+          <span class="course-category">Programa de Formación</span>
+          <h1 class="course-title">Triunfa Gestadora</h1>
+          <p class="course-excerpt">Un contenedor sagrado y estratégico de 16 semanas en vivo diseñado para terapeutas, coaches, psicólogas y mujeres del bienestar. Da a luz el negocio con propósito que tu alma vino a expandir.</p>
+          
+          <div class="course-tabs-header">
+            <span class="course-tab active">Descripción del programa</span>
+          </div>
+          
+          <div class="course-content-box">
+            
+            <h3 class="editorial-heading">El llamado de tu Alma</h3>
+            
+            <p class="drop-cap">A veces, con la velocidad con que hacemos las actividades diarias pasamos por alto las sensaciones y señales de nuestro cuerpo. Está tan normalizado que estemos cansadas, agotadas y estresadas, que se nos dificulta reconocer los signos de alerta, de estrés y de agotamiento en nuestras vidas.</p>
+            
+            <div class="highlight-quote">
+              "Si sientes que ya no puedes más, si lloras sin saber por qué o si tu cuerpo se siente pesado y no disfrutas lo que haces, es porque has perdido tu propia conexión interna."
+            </div>
+            
+            <p>Es el momento de detenerte para escuchar a tu alma. Si eres una mujer emprendedora o de negocios y deseas retomar tu equilibrio, activando tu verdadero poder, este programa es para ti. ¿Alguna vez te has preguntado si, siendo madre, esposa y/o hija, es posible para ti alcanzar lo que deseas, realizarte, expandirte, cuidarte y vivir en el goce eterno de la creación?</p>
+            
+            <p class="author-note">
+              <em>Te confieso que yo creía que esos aspectos eran incompatibles. En mi propio proceso de transformación encontré la bendición del caos, que me permitió salir a la luz con nuevo propósito, mentalidad y actitud ante la vida.</em>
+            </p>
+            
+            <hr class="elegant-divider">
+            
+            <h3 class="editorial-heading" style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 3rem;">Esto es para tí si:</h3>
+            
+            <div class="check-grid">
+              <div class="check-box">
+                <i class="fa fa-seedling"></i>
+                <p>Quieres crear y hacer crecer un emprendimiento desde tu alma y servir profundamente a otros.</p>
+              </div>
+              <div class="check-box">
+                <i class="fa fa-wallet"></i>
+                <p>Sientes el deseo de crecer y generar tu propia autonomía financiera.</p>
+              </div>
+              <div class="check-box">
+                <i class="fa fa-compass"></i>
+                <p>Buscas claridad, enfoque y liviandad en cada paso de tu camino.</p>
+              </div>
+              <div class="check-box">
+                <i class="fa fa-dove"></i>
+                <p>Estás lista para liberarte de creencias limitantes y desarrollar una verdadera mentalidad de grandeza.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- COLUMNA DERECHA: CTA FIJO (STICKY SIDEBAR) -->
+      <div class="course-sidebar">
+        <div class="purchase-card fade-up">
+          <a href="https://wa.me/584122570591" target="_blank" class="btn-elaborated">
+            <span class="btn-elaborated-title">Obtener Programa <span class="btn-elaborated-price">$550</span></span>
+            <span class="btn-elaborated-subtitle">Asegura tu lugar en esta generación</span>
+          </a>
+          
+          <h4 class="details-title">Detalles del programa</h4>
+          <ul class="details-list">
+            <li><i class="fa fa-clock"></i> 16 semanas en vivo</li>
+            <li><i class="fa fa-video"></i> Acompañamiento vía Zoom</li>
+            <li><i class="fa fa-users"></i> Sostén grupal exclusivo</li>
+            <li><i class="fa fa-folder-open"></i> Material de integración</li>
+          </ul>
+        </div>
+      </div>
+      
+    </div>
+  
+    <!-- FINAL CTA -->
+    <section class="section-padding gestadora-cta">
+      <div class="fade-up">
+        <h2 class="section-title" style="margin-bottom: 1.5rem;">El mundo est&aacute; listo para recibir tu luz</h2>
+        <p style="max-width: 800px; margin: 0 auto 3rem; line-height: 1.8; color: var(--text-medium);">
+          No dejes que el agotamiento apague la medicina que viniste a entregar. &Uacute;nete a Gestadoras y transforma tu negocio desde el alma.
+        </p>
+        <a href="https://wa.me/584122570591" class="btn-elaborated" style="margin: 0 auto; max-width: 400px; display: inline-flex; flex-direction: column; align-items: center; background: var(--color-vinotinto); color: var(--color-crema); padding: 1.8rem 2rem; border-radius: 2px; text-decoration: none; box-shadow: 0 10px 30px rgba(102,10,17,0.25);">
+          <span style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700;">OBTENER PROGRAMA <span style="font-size: 1.5rem; border-left: 1px solid rgba(239,230,227,0.3); padding-left: 1rem;"></span></span>
+        </a>
+      </div>
+    </section>
+</main>
+
+  <a href="https://wa.me/584122570591" class="whatsapp-btn" target="_blank" aria-label="Contáctanos por WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+    <footer>
+    <a href="index.html" class="footer-logo">Saulibeth</a>
+    <p class="footer-copy">&copy; 2026 Saulibeth Rivas. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const sidebar = document.getElementById('sidebar');
+    const sidebarClose = document.getElementById('sidebarClose');
+    const sidebarOverlay = document.getElementById('sidebarOverlay');
+    const header = document.getElementById('mainHeader');
+
+    function toggleSidebar() {
+      sidebar.classList.toggle('open');
+      sidebarOverlay.classList.toggle('active');
+      if(sidebar.classList.contains('open')) document.body.style.overflow = 'hidden'; else document.body.style.overflow = '';
+    }
+
+    hamburgerBtn.addEventListener('click', toggleSidebar);
+    sidebarClose.addEventListener('click', toggleSidebar);
+    sidebarOverlay.addEventListener('click', toggleSidebar);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.style.background = 'rgba(239, 230, 227, 0.98)';
+        header.style.boxShadow = '0 4px 20px rgba(151,27,37,0.05)';
+      } else {
+        header.style.background = 'rgba(239, 230, 227, 0.93)';
+        header.style.boxShadow = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
