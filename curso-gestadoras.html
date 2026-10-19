@@ -4,494 +4,1444 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#EFE6E3">
-  <title>Triunfa Gestadora - Saulibeth Rivas</title>
+  <title>Triunfa Gestadoras - Saulibeth Rivas</title>
   
-  <meta name="description" content="Da a luz el negocio con propósito que tu alma vino a expandir. Un contenedor sagrado de 16 semanas." />
+  <meta name="description" content="Acompaño a mujeres visionarias del bienestar a destrabar su potencial, sostener su GranDiosidad y expandir su medicina con soberanía financiera." />
   
-  <!-- Fonts -->
+  <!-- Fonts Oficiales de la Página Principal (index.html) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
   
-  <!-- Icons -->
+  <!-- Icons (Solo navegación y flechas funcionales) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Styles -->
+  <!-- Base Style Global -->
   <link rel="stylesheet" href="assets/style.css">
+  
   <style>
-    /* 
-      LAYOUT TIPO LMS / PÁGINA DE CURSO 
-      Inspirado en la estructura de la web de Saulibeth, 
-      pero con estética limpia y colores CEF.
-    */
-    
-    body {
-      background-color: var(--color-crema);
-      background-image: radial-gradient(rgba(151, 27, 37, 0.03) 2px, transparent 2px);
-      background-size: 30px 30px;
-    }
-    
-    .course-page-wrapper {
-      padding-top: 100px; /* offset para el header fijo */
-      padding-bottom: 6rem;
-    }
-    
-    .course-layout {
-      max-width: 1250px;
-      margin: 0 auto;
-      padding: 3rem 2.5rem;
-      display: grid;
-      grid-template-columns: 1fr 380px;
-      gap: 5rem;
-      align-items: start;
-    }
-    
-    /* --- COLUMNA PRINCIPAL (IZQUIERDA) --- */
-    .course-main {
-      padding-top: 2rem;
-    }
-    
-    .course-category {
-      font-family: var(--font-body);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-medium);
-      display: block;
-      margin-bottom: 1rem;
-    }
-    
-    .course-title {
-      font-family: var(--font-serif);
-      font-size: clamp(3rem, 5vw, 4.5rem);
-      color: var(--color-vinotinto);
-      font-weight: 600;
-      line-height: 1.1;
-      margin-bottom: 1.5rem;
-    }
-    
-    .course-excerpt {
-      font-size: 1.25rem;
-      line-height: 1.7;
-      color: var(--text-dark);
-      margin-bottom: 3rem;
-    }
-    
-    /* TABS */
-    .course-tabs-header {
-      display: flex;
-      gap: 2.5rem;
-      border-bottom: 2px solid rgba(151, 27, 37, 0.1);
-      margin-bottom: 3rem;
-    }
-    
-    .course-tab {
-      font-family: var(--font-body);
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: var(--text-medium);
-      padding-bottom: 1rem;
-      cursor: pointer;
-      position: relative;
-    }
-    
-    .course-tab.active {
-      color: var(--color-vinotinto);
-    }
-    
-    .course-tab.active::after {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background-color: var(--color-rojo);
-    }
-    
-    /* CONTENIDO DEL CURSO */
-    .course-content-box {
-      background: #ffffff;
-      padding: 4rem;
-      border-radius: 4px;
-      box-shadow: 0 10px 40px rgba(151, 27, 37, 0.04);
-    }
-    
-    .course-content-box h3 {
-      font-family: var(--font-serif);
-      font-size: 2.4rem;
-      color: var(--color-vinotinto);
-      margin: 3rem 0 1.5rem;
-      font-weight: 400;
-    }
-    
-    .course-content-box h3:first-child {
-      margin-top: 0;
-    }
-    
-    .course-content-box p {
-      font-size: 1.15rem;
-      line-height: 1.8;
-      color: var(--text-dark);
-      margin-bottom: 1.5rem;
-    }
-    
-    /* DISEÑO EDITORIAL PARA LA DESCRIPCIÓN */
-    .editorial-heading {
-      font-family: var(--font-script);
-      font-size: clamp(3.5rem, 5vw, 4.5rem);
-      color: var(--color-rojo);
-      margin-bottom: 1.5rem;
-      line-height: 1;
-      text-align: center;
-    }
-    
-    .drop-cap::first-letter {
-      font-family: var(--font-serif);
-      font-size: 4.5rem;
-      color: var(--color-vinotinto);
-      float: left;
-      line-height: 0.8;
-      margin-right: 0.8rem;
-      margin-top: 0.2rem;
-    }
-    
-    .highlight-quote {
-      background: linear-gradient(135deg, var(--color-crema) 0%, #f0e6e2 100%);
-      border-left: 4px solid var(--color-vinotinto);
-      padding: 2rem 2.5rem;
-      margin: 2.5rem 0;
-      border-radius: 0 4px 4px 0;
-      font-family: var(--font-serif);
-      font-size: 1.4rem;
-      color: var(--color-vinotinto);
-      font-style: italic;
-      line-height: 1.6;
-    }
-    
-    .author-note {
-      font-size: 1.15rem;
-      color: var(--text-medium);
-      padding: 1.5rem;
-      background: var(--color-nude);
-      border-radius: 4px;
-      margin-top: 2rem;
-      text-align: center;
-    }
-    
-    .elegant-divider {
-      border: 0;
-      height: 1px;
-      background: linear-gradient(to right, transparent, rgba(151,27,37,0.2), transparent);
-      margin: 4rem 0;
-    }
-    
-    /* Grid de Checks Atractivo */
-    .check-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
-    }
-    
-    .check-box {
-      display: flex;
-      gap: 1.2rem;
-      align-items: flex-start;
-      background: rgba(239, 230, 227, 0.4); /* Crema ultra suave */
-      padding: 1.8rem;
-      border-radius: 4px;
-      border: 1px solid rgba(151, 27, 37, 0.05);
-      transition: transform 0.3s;
-    }
-    
-    .check-box:hover {
-      transform: translateY(-3px);
-      background: rgba(239, 230, 227, 0.7);
-    }
-    
-    .check-box i {
-      color: var(--color-rojo);
-      font-size: 1.2rem;
-      margin-top: 3px;
-    }
-    
-    .check-box p {
-      margin: 0 !important;
-      font-size: 1.05rem;
-      line-height: 1.5;
-    }
-    
-    /* --- COLUMNA LATERAL (DERECHA / COMPRA) --- */
-    .course-sidebar {
-      position: relative;
-      margin-top: 2rem;
-    }
-    
-    .purchase-card {
-      background: #ffffff;
-      padding: 2.5rem;
-      border-radius: 4px;
-      box-shadow: 0 15px 50px rgba(151, 27, 37, 0.08);
-      position: sticky;
-      top: 120px;
-    }
-    
-    /* Botón idéntico al de CEF */
-    .btn-elaborated {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      background: var(--color-vinotinto);
-      color: var(--color-crema);
-      padding: 1.8rem 2rem;
-      border-radius: 2px;
-      text-decoration: none;
-      transition: transform 0.4s, box-shadow 0.4s;
-      position: relative;
-      width: 100%;
-      margin-bottom: 2.5rem;
-      box-shadow: 0 10px 30px rgba(102, 10, 17, 0.25);
-    }
-    
-    .btn-elaborated:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(102, 10, 17, 0.35);
-      background: #4d0810; /* Vinotinto oscuro en hover */
-    }
-    
-    .btn-elaborated span {
-      position: relative;
-      z-index: 2;
-      width: 100%;
-      text-align: center;
-    }
-    
-    .btn-elaborated-title {
-      font-family: var(--font-body);
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    /* =========================================================
+       TRIUNFA GESTADORAS - REGLAS DE MARCA SAULIBETH RIVAS
+       Misma tipografía exacta de index.html:
+       - Título principal Hero: Pinyon Script en #971B25
+       - Títulos de sección: Cormorant Garamond (weight 300/400) + em en Pinyon Script
+       - Textos y cuerpo: Nunito
+       - Paleta: #971B25, #660A11, #9AA793, #E0BCAF, #B99590, #EFE6E3
+       ========================================================= */
+
+    :root {
+      --color-rojo: #971B25;
+      --color-vinotinto: #660A11;
+      --color-sage: #9AA793;
+      --color-nude: #E0BCAF;
+      --color-mauve: #B99590;
+      --color-crema: #EFE6E3;
+      --color-dark: #2A1A1A;
+      --color-medium: #5C3D3D;
+
+      --font-script: 'Pinyon Script', cursive;
+      --font-body: 'Nunito', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
     }
 
-    .btn-elaborated-price {
-      font-size: 1.5rem;
-      border-left: 1px solid rgba(239, 230, 227, 0.3);
-      padding-left: 1rem;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
-    
-    .btn-elaborated-subtitle {
-      font-family: var(--font-serif);
-      font-size: 1.1rem;
-      font-style: italic;
-      color: var(--color-crema);
-      opacity: 0.9;
-      font-weight: 400;
-      text-align: left;
-    }
-    
-    .details-title {
+
+    body {
+      background-color: var(--color-crema);
+      background-image: 
+        radial-gradient(circle at 10% 12%, rgba(224, 188, 175, 0.45) 0%, transparent 40%),
+        radial-gradient(circle at 90% 30%, rgba(154, 167, 147, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 20% 75%, rgba(185, 149, 144, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(151, 27, 37, 0.08) 0%, transparent 35%);
+      color: var(--color-dark);
       font-family: var(--font-body);
-      font-size: 1.2rem;
-      color: var(--text-dark);
-      border-bottom: 1px solid rgba(151, 27, 37, 0.1);
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
-      font-weight: 600;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      overflow-x: hidden;
     }
-    
-    .details-list {
-      list-style: none;
+
+    .landing-wrapper {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.75rem;
     }
-    
-    .details-list li {
+
+    /* =========================================================
+       BOTÓN PERSISTENTE DE COMPRA (STICKY BOTTOM BAR)
+       Siempre visible al hacer scroll, sin ruido visual
+       ========================================================= */
+    .sticky-buy-bar {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translate(-50%, 140%);
+      z-index: 999;
+      width: calc(100% - 2.5rem);
+      max-width: 580px;
+      background: rgba(239, 230, 227, 0.94);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid var(--color-mauve);
+      border-radius: 9999px;
+      box-shadow: 0 16px 40px rgba(102, 10, 17, 0.16);
+      padding: 0.6rem 0.8rem 0.6rem 1.6rem;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 1rem;
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-      color: var(--text-medium);
+      transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease;
+      opacity: 0;
+      pointer-events: none;
     }
-    
-    .details-list li i {
+    .sticky-buy-bar.visible {
+      transform: translate(-50%, 0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sticky-info {
+      display: flex;
+      flex-direction: column;
+    }
+    .sticky-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
       color: var(--color-rojo);
-      font-size: 1.1rem;
-      width: 20px;
-      text-align: center;
+      font-weight: 700;
     }
-    
-    @media (max-width: 1024px) {
-      .course-layout {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-      .course-sidebar {
-        margin-top: 0;
-      }
-      .purchase-card {
-        position: static;
-      }
-      .course-content-box {
-        padding: 2.5rem;
-      }
-      .bonus-grid {
-        grid-template-columns: 1fr;
-      }
+    .sticky-name {
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--color-vinotinto);
+      line-height: 1.1;
     }
-  
-    /* Final CTA */
-    .gestadora-cta {
-      padding: 10rem 2.5rem;
-      background: var(--color-crema);
+    .btn-sticky-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      padding: 0.8rem 1.75rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--color-rojo) 0%, var(--color-vinotinto) 100%);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      white-space: nowrap;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 6px 18px rgba(151, 27, 37, 0.28);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      cursor: pointer;
+    }
+    .btn-sticky-action:hover {
+      transform: scale(1.03);
+      box-shadow: 0 10px 24px rgba(151, 27, 37, 0.4);
+    }
+    .btn-sticky-action i {
+      font-size: 0.82rem;
+      transition: transform 0.25s ease;
+    }
+    .btn-sticky-action:hover i {
+      transform: translateX(3px);
+    }
+
+    /* =========================================================
+       BOTONES DE ALTA COSTURA
+       ========================================================= */
+    .btn-luxury-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.85rem;
+      padding: 1.2rem 2.8rem;
+      border-radius: 9999px;
+      background: linear-gradient(135deg, var(--color-rojo) 0%, var(--color-vinotinto) 100%);
+      color: #ffffff !important;
+      font-weight: 700;
+      font-size: 1.05rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 12px 30px rgba(151, 27, 37, 0.25);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .btn-luxury-primary::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+      transform: skewX(-25deg);
+      transition: 0.75s ease;
+    }
+    .btn-luxury-primary:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 18px 40px rgba(151, 27, 37, 0.38);
+      background: linear-gradient(135deg, #a81e29 0%, var(--color-vinotinto) 100%);
+    }
+    .btn-luxury-primary:hover::before {
+      left: 140%;
+    }
+    .btn-luxury-primary i {
+      font-size: 0.9rem;
+      transition: transform 0.25s ease;
+    }
+    .btn-luxury-primary:hover i {
+      transform: translateX(4px);
+    }
+
+    /* =========================================================
+       HERO SECTION (Misma tipografía que index.html)
+       ========================================================= */
+    .hero-gestadoras {
+      padding: 130px 0 50px;
       text-align: center;
       position: relative;
     }
-    .gestadora-cta .btn-elaborated {
-      margin: 0 auto;
-      max-width: 400px;
+
+    /* Título con la tipografía Pinyon Script idéntica a la home */
+    .hero-title {
+      font-family: var(--font-script) !important;
+      font-size: clamp(4.2rem, 8.5vw, 7.2rem);
+      color: var(--color-rojo);
+      line-height: 1.05;
+      margin-bottom: 2rem;
+      position: relative;
+      display: inline-block;
     }
-</style>
+    .hero-title::after {
+      content: '';
+      display: block;
+      width: 70px;
+      height: 1px;
+      background: var(--color-rojo);
+      margin: 1.6rem auto 0;
+      opacity: 0.5;
+    }
+
+    .hero-hook-box {
+      background: linear-gradient(135deg, rgba(224, 188, 175, 0.45) 0%, rgba(154, 167, 147, 0.3) 100%);
+      border: 1px solid var(--color-mauve);
+      border-radius: 20px;
+      padding: 1.8rem 2.4rem;
+      max-width: 860px;
+      margin: 0 auto 2.2rem;
+      box-shadow: 0 8px 28px rgba(102, 10, 17, 0.05);
+    }
+
+    .hero-hook-text {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(1.4rem, 2.4vw, 1.9rem);
+      color: var(--color-vinotinto);
+      font-weight: 400;
+      line-height: 1.45;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: var(--color-medium);
+      max-width: 780px;
+      margin: 0 auto 2.8rem;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-bottom: 3rem;
+    }
+
+    /* =========================================================
+       TÍTULOS DE SECCIÓN (Tipografía editorial idéntica a la home)
+       ========================================================= */
+    .section-spacing {
+      padding: 60px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3.5rem;
+    }
+
+    .section-eyebrow {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-rojo);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .section-title {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(2.5rem, 5vw, 3.8rem);
+      color: var(--color-vinotinto);
+      font-weight: 300;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-title em {
+      font-family: var(--font-script) !important;
+      color: var(--color-rojo);
+      font-style: normal;
+      font-size: 1.3em;
+      display: inline-block;
+      margin-left: 0.2rem;
+    }
+
+    .section-subtitle {
+      font-size: 1.15rem;
+      color: var(--color-medium);
+      font-weight: 400;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       LOS 3 PILARES DE LA METODOLOGÍA
+       ========================================================= */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .pillar-card {
+      border-radius: 22px;
+      padding: 3rem 2.2rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 10px 30px rgba(102, 10, 17, 0.05);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(102, 10, 17, 0.12);
+    }
+
+    .pillar-card-1 {
+      background: linear-gradient(160deg, #ffffff 0%, rgba(224, 188, 175, 0.4) 100%);
+      border: 2px solid var(--color-nude);
+    }
+    .pillar-card-2 {
+      background: linear-gradient(160deg, #ffffff 0%, rgba(185, 149, 144, 0.35) 100%);
+      border: 2px solid var(--color-mauve);
+    }
+    .pillar-card-3 {
+      background: linear-gradient(160deg, #ffffff 0%, rgba(154, 167, 147, 0.35) 100%);
+      border: 2px solid var(--color-sage);
+    }
+
+    .pillar-num {
+      font-family: var(--font-script) !important;
+      font-size: 5rem;
+      color: var(--color-rojo);
+      line-height: 0.85;
+      margin-bottom: 0.6rem;
+    }
+
+    .pillar-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-vinotinto);
+      font-weight: 700;
+      margin-bottom: 0.7rem;
+      display: block;
+    }
+
+    .pillar-title {
+      font-family: var(--font-serif) !important;
+      font-size: 1.85rem;
+      color: var(--color-vinotinto);
+      font-weight: 400;
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .pillar-desc {
+      font-size: 1.02rem;
+      color: var(--color-dark);
+      line-height: 1.7;
+      flex-grow: 1;
+    }
+
+    .pillar-footer-label {
+      margin-top: 1.8rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(151, 27, 37, 0.12);
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--color-rojo);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* =========================================================
+       LA GRAN TRANSFORMACIÓN (DE -> A)
+       ========================================================= */
+    .transform-wrapper {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: clamp(2.5rem, 5vw, 4rem);
+      border: 2px solid var(--color-nude);
+      box-shadow: 0 14px 40px rgba(102, 10, 17, 0.06);
+      margin-bottom: 5rem;
+    }
+
+    .transform-row {
+      display: grid;
+      grid-template-columns: 1fr 50px 1fr;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.6rem 0;
+      border-bottom: 1px solid rgba(185, 149, 144, 0.25);
+    }
+    .transform-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .transform-from {
+      background: rgba(239, 230, 227, 0.5);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      border-left: 4px solid var(--color-mauve);
+    }
+    .transform-from h4 {
+      font-family: var(--font-serif) !important;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--color-medium);
+      text-decoration: line-through;
+      margin-bottom: 0.3rem;
+    }
+    .transform-from p {
+      font-size: 0.95rem;
+      color: #6d5b58;
+      line-height: 1.5;
+    }
+
+    .transform-arrow-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--color-nude);
+      border: 1px solid var(--color-mauve);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-vinotinto);
+      font-size: 1rem;
+      margin: 0 auto;
+    }
+
+    .transform-to {
+      background: rgba(224, 188, 175, 0.25);
+      border-radius: 14px;
+      padding: 1.3rem 1.5rem;
+      border-left: 4px solid var(--color-rojo);
+    }
+    .transform-to h4 {
+      font-family: var(--font-serif) !important;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--color-vinotinto);
+      margin-bottom: 0.3rem;
+    }
+    .transform-to p {
+      font-size: 0.98rem;
+      color: var(--color-dark);
+      line-height: 1.55;
+    }
+
+    @media (max-width: 768px) {
+      .transform-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+      }
+      .transform-arrow-box {
+        transform: rotate(90deg);
+      }
+    }
+
+    /* =========================================================
+       QUIÉN TE ACOMPAÑA (AUTORIDAD & CALIDEZ)
+       ========================================================= */
+    .mentor-section {
+      display: grid;
+      grid-template-columns: 420px 1fr;
+      gap: 4rem;
+      align-items: center;
+      margin-bottom: 5.5rem;
+    }
+    .mentor-photo-wrap {
+      position: relative;
+    }
+    .mentor-photo-bg {
+      position: absolute;
+      inset: -14px -14px 14px 14px;
+      border-radius: 26px;
+      background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-nude) 100%);
+      z-index: 1;
+      opacity: 0.8;
+    }
+    .mentor-photo-frame {
+      position: relative;
+      z-index: 2;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 20px 48px rgba(102, 10, 17, 0.14);
+      border: 2px solid #ffffff;
+      aspect-ratio: 4/5;
+      background: #f0e6e3;
+    }
+    .mentor-photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+    .mentor-seal-badge {
+      position: absolute;
+      bottom: -18px;
+      right: -18px;
+      z-index: 3;
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: var(--color-vinotinto);
+      color: var(--color-crema);
+      border: 3px solid #ffffff;
+      box-shadow: 0 10px 24px rgba(102, 10, 17, 0.25);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .mentor-seal-badge .seal-monogram {
+      font-family: var(--font-script) !important;
+      font-size: 2.2rem;
+      line-height: 1;
+      color: var(--color-nude);
+    }
+    .mentor-seal-badge .seal-sub {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-weight: 700;
+    }
+    .mentor-content h2 {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+      color: var(--color-vinotinto);
+      font-weight: 300;
+      line-height: 1.18;
+      margin-bottom: 0.4rem;
+    }
+    .mentor-tagline {
+      font-family: var(--font-script) !important;
+      font-size: 2.3rem;
+      color: var(--color-rojo);
+      margin-bottom: 1.6rem;
+      display: block;
+      line-height: 1;
+    }
+    .mentor-bio p {
+      font-size: 1.12rem;
+      color: var(--color-dark);
+      line-height: 1.8;
+      margin-bottom: 1.3rem;
+    }
+    .mentor-signature {
+      margin-top: 1.8rem;
+    }
+    .signature-script {
+      font-family: var(--font-script) !important;
+      font-size: 3rem;
+      color: var(--color-rojo);
+      line-height: 1;
+    }
+    .signature-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--color-medium);
+      font-weight: 700;
+      margin-top: 0.35rem;
+    }
+
+    @media (max-width: 992px) {
+      .mentor-section {
+        grid-template-columns: 1fr;
+        max-width: 580px;
+        margin: 0 auto 4.5rem;
+        text-align: center;
+      }
+      .mentor-seal-badge {
+        right: 10px;
+        bottom: -10px;
+      }
+    }
+
+    /* =========================================================
+       CAJA DE OFERTA IRRESISTIBLE & INVERSIÓN
+       Ancla: #inversion
+       ========================================================= */
+    .offer-box-wrapper {
+      max-width: 880px;
+      margin: 0 auto 5.5rem;
+    }
+    .offer-box {
+      background: #ffffff;
+      border-radius: 26px;
+      border: 2.5px solid var(--color-mauve);
+      box-shadow: 0 24px 65px rgba(102, 10, 17, 0.14);
+      overflow: hidden;
+    }
+    .offer-ribbon {
+      background: linear-gradient(90deg, var(--color-vinotinto) 0%, var(--color-rojo) 50%, var(--color-vinotinto) 100%);
+      color: #ffffff;
+      text-align: center;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+    }
+    .offer-content {
+      padding: clamp(2.5rem, 5vw, 4rem);
+      text-align: center;
+    }
+    .offer-title {
+      font-family: var(--font-script) !important;
+      font-size: clamp(3.2rem, 5.5vw, 4.8rem);
+      color: var(--color-rojo);
+      line-height: 1.1;
+      margin-bottom: 0.6rem;
+    }
+    .offer-promise {
+      font-size: 1.15rem;
+      color: var(--color-medium);
+      max-width: 640px;
+      margin: 0 auto 2.2rem;
+    }
+    .offer-price-area {
+      background: linear-gradient(135deg, rgba(224, 188, 175, 0.4) 0%, rgba(239, 230, 227, 0.9) 100%);
+      border-radius: 18px;
+      padding: 1.8rem;
+      max-width: 440px;
+      margin: 0 auto 2.5rem;
+      border: 1.5px solid var(--color-mauve);
+    }
+    .price-tag-sub {
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-vinotinto);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+    .price-value {
+      font-family: var(--font-serif) !important;
+      font-size: clamp(3.4rem, 5.5vw, 4.3rem);
+      color: var(--color-vinotinto);
+      font-weight: 600;
+      line-height: 1;
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+    .price-currency {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: var(--color-rojo);
+    }
+    .price-terms {
+      font-size: 0.9rem;
+      color: var(--color-medium);
+      margin-top: 0.4rem;
+      font-weight: 600;
+    }
+
+    .includes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.25rem;
+      text-align: left;
+      margin-bottom: 2.8rem;
+    }
+    .include-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      font-size: 1rem;
+      color: var(--color-dark);
+      line-height: 1.55;
+      padding: 0.75rem 1rem;
+      background: rgba(239, 230, 227, 0.45);
+      border-radius: 10px;
+      border-left: 3px solid var(--color-sage);
+    }
+    .include-dash {
+      color: var(--color-rojo);
+      font-weight: 700;
+      font-size: 1.2rem;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       PREGUNTAS FRECUENTES (FAQ ACORDEÓN)
+       ========================================================= */
+    .faq-wrapper {
+      max-width: 820px;
+      margin: 0 auto 5.5rem;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1.5px solid var(--color-mauve);
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: border-color 0.25s ease;
+    }
+    .faq-item.active {
+      border-color: var(--color-rojo);
+      box-shadow: 0 8px 24px rgba(102, 10, 17, 0.06);
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.4rem 1.8rem;
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.2rem;
+      cursor: pointer;
+    }
+    .faq-question-text {
+      font-family: var(--font-serif) !important;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-vinotinto);
+      line-height: 1.25;
+      transition: color 0.2s ease;
+    }
+    .faq-question:hover .faq-question-text {
+      color: var(--color-rojo);
+    }
+    .faq-toggle-sign {
+      font-family: var(--font-body) !important;
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: var(--color-rojo);
+      transition: transform 0.3s ease;
+    }
+    .faq-item.active .faq-toggle-sign {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 0 1.8rem;
+    }
+    .faq-item.active .faq-answer {
+      padding-bottom: 1.5rem;
+    }
+    .faq-answer p {
+      font-size: 1.02rem;
+      color: var(--color-dark);
+      line-height: 1.7;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--color-vinotinto);
+      color: var(--color-crema);
+      padding: 3.5rem 2rem 5.5rem;
+      text-align: center;
+    }
+    .footer-logo {
+      font-family: var(--font-script) !important;
+      font-size: 3.2rem;
+      color: var(--color-nude);
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+    }
+    .footer-social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social-links a {
+      color: var(--color-crema);
+      font-size: 1.25rem;
+      transition: color 0.25s ease;
+    }
+    .footer-social-links a:hover {
+      color: var(--color-nude);
+    }
+    .footer-copy {
+      font-size: 0.88rem;
+      color: rgba(239, 230, 227, 0.75);
+    }
+
+    /* =========================================================
+       RESPONSIVE & MOBILE DESIGN (100% ADAPTADO A MÓVILES)
+       ========================================================= */
+    @media (max-width: 768px) {
+      body {
+        font-size: 1rem;
+        line-height: 1.68;
+      }
+
+      .landing-wrapper {
+        padding: 0 1.25rem;
+      }
+
+      /* Hero Mobile */
+      .hero-gestadoras {
+        padding: 95px 0 35px;
+      }
+      .hero-title {
+        font-size: clamp(3.2rem, 13vw, 4.8rem);
+        margin-bottom: 1.2rem;
+      }
+      .hero-title::after {
+        margin: 1.1rem auto 0;
+        width: 50px;
+      }
+      .hero-hook-box {
+        padding: 1.3rem 1.25rem;
+        border-radius: 16px;
+        margin-bottom: 1.6rem;
+      }
+      .hero-hook-text {
+        font-size: clamp(1.2rem, 4.8vw, 1.45rem);
+        line-height: 1.42;
+      }
+      .hero-desc {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+      }
+      .hero-actions {
+        margin-bottom: 2rem;
+      }
+      .btn-luxury-primary {
+        width: 100%;
+        max-width: 360px;
+        padding: 1.15rem 1.8rem;
+        font-size: 0.98rem;
+        text-align: center;
+      }
+
+      /* Sección Títulos */
+      .section-spacing {
+        padding: 45px 0;
+      }
+      .section-header {
+        margin-bottom: 2.2rem;
+      }
+      .section-title {
+        font-size: clamp(2.1rem, 7.5vw, 2.9rem);
+        line-height: 1.2;
+      }
+      .section-title em {
+        display: inline;
+        font-size: 1.18em;
+      }
+      .section-subtitle {
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      /* Pilares Mobile */
+      .pillars-grid {
+        grid-template-columns: 1fr;
+        gap: 1.4rem;
+        margin-bottom: 3rem;
+      }
+      .pillar-card {
+        padding: 2.2rem 1.5rem;
+        border-radius: 18px;
+      }
+      .pillar-num {
+        font-size: 4rem;
+        margin-bottom: 0.2rem;
+      }
+      .pillar-title {
+        font-size: 1.55rem;
+        margin-bottom: 0.75rem;
+        line-height: 1.25;
+      }
+      .pillar-desc {
+        font-size: 1rem;
+        line-height: 1.65;
+      }
+
+      /* Transformación Mobile */
+      .transform-wrapper {
+        padding: 2rem 1.25rem;
+        border-radius: 18px;
+        margin-bottom: 3.5rem;
+      }
+      .transform-row {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+        padding: 1.25rem 0;
+      }
+      .transform-from, .transform-to {
+        padding: 1.1rem 1.15rem;
+      }
+      .transform-arrow-box {
+        margin: 0.2rem auto;
+        transform: rotate(90deg);
+        width: 36px;
+        height: 36px;
+        font-size: 0.85rem;
+      }
+      .transform-from h4 {
+        font-size: 1.15rem;
+      }
+      .transform-to h4 {
+        font-size: 1.25rem;
+      }
+      .transform-from p, .transform-to p {
+        font-size: 0.92rem;
+      }
+
+      /* Mentor Section Mobile */
+      .mentor-section {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        max-width: 440px;
+        margin: 0 auto 4rem;
+        text-align: center;
+      }
+      .mentor-photo-frame {
+        max-width: 290px;
+        margin: 0 auto;
+        border-radius: 18px;
+      }
+      .mentor-photo-bg {
+        inset: -10px -10px 10px 10px;
+        border-radius: 22px;
+      }
+      .mentor-seal-badge {
+        width: 88px;
+        height: 88px;
+        bottom: -10px;
+        right: 15px;
+      }
+      .mentor-seal-badge .seal-monogram {
+        font-size: 1.9rem;
+      }
+      .mentor-content h2 {
+        font-size: clamp(2.1rem, 6.8vw, 2.7rem);
+        line-height: 1.2;
+      }
+      .mentor-tagline {
+        font-size: 1.85rem;
+        margin-bottom: 1.2rem;
+      }
+      .mentor-bio p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        text-align: left;
+      }
+      .mentor-signature {
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+      .signature-script {
+        font-size: 2.6rem;
+      }
+
+      /* Caja de Oferta Mobile */
+      .offer-box-wrapper {
+        margin: 0 auto 4rem;
+      }
+      .offer-box {
+        border-radius: 20px;
+      }
+      .offer-ribbon {
+        font-size: 0.75rem;
+        padding: 0.75rem 1rem;
+        letter-spacing: 0.15em;
+      }
+      .offer-content {
+        padding: 2.2rem 1.25rem;
+      }
+      .offer-title {
+        font-size: clamp(2.6rem, 11vw, 3.6rem);
+      }
+      .offer-promise {
+        font-size: 1.05rem;
+        margin-bottom: 1.8rem;
+      }
+      .offer-price-area {
+        padding: 1.4rem 1rem;
+        border-radius: 16px;
+        margin-bottom: 2rem;
+      }
+      .price-value {
+        font-size: 3.4rem;
+      }
+      .includes-grid {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+        margin-bottom: 2.2rem;
+      }
+      .include-item {
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
+      }
+
+      /* FAQ Mobile */
+      .faq-wrapper {
+        margin: 0 auto 4.5rem;
+      }
+      .faq-question {
+        padding: 1.2rem 1.25rem;
+        gap: 0.8rem;
+      }
+      .faq-question-text {
+        font-size: 1.2rem;
+        line-height: 1.35;
+      }
+      .faq-answer {
+        padding: 0 1.25rem;
+      }
+      .faq-item.active .faq-answer {
+        padding-bottom: 1.25rem;
+      }
+      .faq-answer p {
+        font-size: 0.98rem;
+      }
+
+      /* Footer Mobile con espacio para la barra de compra */
+      footer {
+        padding: 3rem 1.5rem 6.5rem;
+      }
+
+      /* Header mobile */
+      header {
+        padding: 0.9rem 1.25rem 0.9rem 4.5rem;
+      }
+      .header-social {
+        display: none;
+      }
+      .header-logo .script-name {
+        font-size: 2.1rem;
+      }
+      /* En móviles: sólo el botón flotante Obtener Programa */
+      .sticky-info {
+        display: none !important;
+      }
+      .sticky-buy-bar {
+        width: auto;
+        max-width: calc(100% - 2rem);
+        left: 50%;
+        bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+        transform: translate(-50%, 140%);
+        border-radius: 9999px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        display: flex;
+        justify-content: center;
+      }
+      .sticky-buy-bar.visible {
+        transform: translate(-50%, 0);
+      }
+      .btn-sticky-action {
+        padding: 0.95rem 2.2rem;
+        font-size: 0.95rem;
+        border-radius: 9999px;
+        box-shadow: 0 10px 32px rgba(151, 27, 37, 0.45), 0 2px 8px rgba(0, 0, 0, 0.12);
+        width: auto;
+        min-width: 240px;
+        justify-content: center;
+      }
+    }
+
+    /* Reglas para pantallas compactas (< 520px) */
+    @media (max-width: 520px) {
+      .landing-wrapper {
+        padding: 0 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
+  <!-- Overlay y Sidebar Menu -->
   <div class="sidebar-overlay" id="sidebarOverlay"></div>
   <nav class="sidebar" id="sidebar">
-    <button class="sidebar-close" id="sidebarClose">×</button>
+    <button class="sidebar-close" id="sidebarClose" aria-label="Cerrar Menú">×</button>
     <ul class="sidebar-nav">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="index.html#libro">Mi Libro</a></li>
+      <li><a href="index.html#podcast">Podcast</a></li>
       <hr class="sidebar-divider">
-      <li><a href="cursos.html">Cursos</a></li>
-      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="cursos.html">Programas</a></li>
       <li><a href="testimonios.html">Testimonios</a></li>
       <hr class="sidebar-divider">
-      <li><a href="contacto.html">Contacto</a></li>
+      <li><a href="contacto.html">Contacto Directo</a></li>
     </ul>
   </nav>
 
-  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Menú">
+  <!-- Botón Hamburguesa -->
+  <button class="hamburger-btn" id="hamburgerBtn" aria-label="Abrir Menú">
     <span></span><span></span><span></span>
   </button>
 
+  <!-- Header Fijo Superior -->
   <header id="mainHeader">
     <a href="index.html" class="header-logo">
       <span class="script-name">Saulibeth</span>
-      <span class="serif-subtitle">- Rivas -</span>
+      <span class="serif-subtitle">- RIVAS -</span>
     </a>
     <div class="header-social">
-      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://www.youtube.com/@saulibethrivas" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/@saulibethrivas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
     </div>
   </header>
 
-  <main class="course-page-wrapper">
-    <div class="course-layout">
-      
-      <!-- COLUMNA IZQUIERDA: CONTENIDO -->
-      <div class="course-main">
-        <div class="fade-up">
-          <span class="course-category">Programa de Formación</span>
-          <h1 class="course-title">Triunfa Gestadora</h1>
-          <p class="course-excerpt">Un contenedor sagrado y estratégico de 16 semanas en vivo diseñado para terapeutas, coaches, psicólogas y mujeres del bienestar. Da a luz el negocio con propósito que tu alma vino a expandir.</p>
-          
-          <div class="course-tabs-header">
-            <span class="course-tab active">Descripción del programa</span>
-          </div>
-          
-          <div class="course-content-box">
-            
-            <h3 class="editorial-heading">El llamado de tu Alma</h3>
-            
-            <p class="drop-cap">A veces, con la velocidad con que hacemos las actividades diarias pasamos por alto las sensaciones y señales de nuestro cuerpo. Está tan normalizado que estemos cansadas, agotadas y estresadas, que se nos dificulta reconocer los signos de alerta, de estrés y de agotamiento en nuestras vidas.</p>
-            
-            <div class="highlight-quote">
-              "Si sientes que ya no puedes más, si lloras sin saber por qué o si tu cuerpo se siente pesado y no disfrutas lo que haces, es porque has perdido tu propia conexión interna."
-            </div>
-            
-            <p>Es el momento de detenerte para escuchar a tu alma. Si eres una mujer emprendedora o de negocios y deseas retomar tu equilibrio, activando tu verdadero poder, este programa es para ti. ¿Alguna vez te has preguntado si, siendo madre, esposa y/o hija, es posible para ti alcanzar lo que deseas, realizarte, expandirte, cuidarte y vivir en el goce eterno de la creación?</p>
-            
-            <p class="author-note">
-              <em>Te confieso que yo creía que esos aspectos eran incompatibles. En mi propio proceso de transformación encontré la bendición del caos, que me permitió salir a la luz con nuevo propósito, mentalidad y actitud ante la vida.</em>
-            </p>
-            
-            <hr class="elegant-divider">
-            
-            <h3 class="editorial-heading" style="font-size: clamp(2.5rem, 4vw, 3.5rem); margin-bottom: 3rem;">Esto es para tí si:</h3>
-            
-            <div class="check-grid">
-              <div class="check-box">
-                <i class="fa fa-seedling"></i>
-                <p>Quieres crear y hacer crecer un emprendimiento desde tu alma y servir profundamente a otros.</p>
-              </div>
-              <div class="check-box">
-                <i class="fa fa-wallet"></i>
-                <p>Sientes el deseo de crecer y generar tu propia autonomía financiera.</p>
-              </div>
-              <div class="check-box">
-                <i class="fa fa-compass"></i>
-                <p>Buscas claridad, enfoque y liviandad en cada paso de tu camino.</p>
-              </div>
-              <div class="check-box">
-                <i class="fa fa-dove"></i>
-                <p>Estás lista para liberarte de creencias limitantes y desarrollar una verdadera mentalidad de grandeza.</p>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      
-      <!-- COLUMNA DERECHA: CTA FIJO (STICKY SIDEBAR) -->
-      <div class="course-sidebar">
-        <div class="purchase-card fade-up">
-          <a href="https://wa.me/584122570591" target="_blank" class="btn-elaborated">
-            <span class="btn-elaborated-title">Obtener Programa <span class="btn-elaborated-price">$550</span></span>
-            <span class="btn-elaborated-subtitle">Asegura tu lugar en esta generación</span>
-          </a>
-          
-          <h4 class="details-title">Detalles del programa</h4>
-          <ul class="details-list">
-            <li><i class="fa fa-clock"></i> 16 semanas en vivo</li>
-            <li><i class="fa fa-video"></i> Acompañamiento vía Zoom</li>
-            <li><i class="fa fa-users"></i> Sostén grupal exclusivo</li>
-            <li><i class="fa fa-folder-open"></i> Material de integración</li>
-          </ul>
-        </div>
-      </div>
-      
+  <!-- =========================================================
+       BOTÓN PERSISTENTE DE COMPRA (STICKY BOTTOM BAR)
+       Siempre presente al hacer scroll
+       Texto obligatorio: "Obtener Programa"
+       ========================================================= -->
+  <aside class="sticky-buy-bar" id="stickyBuyBar" aria-label="Acceso rápido a compra">
+    <div class="sticky-info">
+      <span class="sticky-tag">Programa Insignia</span>
+      <span class="sticky-name">Triunfa Gestadoras</span>
     </div>
-  
-    <!-- FINAL CTA -->
-    <section class="section-padding gestadora-cta">
-      <div class="fade-up">
-        <h2 class="section-title" style="margin-bottom: 1.5rem;">El mundo est&aacute; listo para recibir tu luz</h2>
-        <p style="max-width: 800px; margin: 0 auto 3rem; line-height: 1.8; color: var(--text-medium);">
-          No dejes que el agotamiento apague la medicina que viniste a entregar. &Uacute;nete a Gestadoras y transforma tu negocio desde el alma.
+    <a href="#inversion" class="btn-sticky-action" id="stickyBuyBtn">
+      Obtener Programa <i class="fa-solid fa-arrow-right"></i>
+    </a>
+  </aside>
+
+  <main>
+    <div class="landing-wrapper">
+
+      <!-- =========================================================
+           HERO SECTION
+           (Misma tipografía Pinyon Script que index.html)
+           ========================================================= -->
+      <section class="hero-gestadoras">
+        <h1 class="hero-title">Triunfa Gestadoras</h1>
+
+        <div class="hero-hook-box">
+          <p class="hero-hook-text">
+            "Deja de encogerte para encajar: Construye tu negocio consciente, crece sin culpa y lidera en grande con tu intuición."
+          </p>
+        </div>
+
+        <p class="hero-desc">
+          Acompaño a mujeres visionarias del área de bienestar a destrabar su potencialidad, sostener su GranDiosidad y expandir su medicina. Creando un modelo de negocio que fusiona la estrategia siguiendo tu fuego creativo con la soberanía financiera, llevándote a facturar en grande sin perder tu alma, ni tu paz.
         </p>
-        <a href="https://wa.me/584122570591" class="btn-elaborated" style="margin: 0 auto; max-width: 400px; display: inline-flex; flex-direction: column; align-items: center; background: var(--color-vinotinto); color: var(--color-crema); padding: 1.8rem 2rem; border-radius: 2px; text-decoration: none; box-shadow: 0 10px 30px rgba(102,10,17,0.25);">
-          <span style="font-family: var(--font-body); font-size: 1.25rem; font-weight: 700;">OBTENER PROGRAMA <span style="font-size: 1.5rem; border-left: 1px solid rgba(239,230,227,0.3); padding-left: 1rem;"></span></span>
-        </a>
-      </div>
-    </section>
-</main>
 
-  <a href="https://wa.me/584122570591" class="whatsapp-btn" target="_blank" aria-label="Contáctanos por WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+        <div class="hero-actions">
+          <a href="#inversion" class="btn-luxury-primary">
+            Obtener Programa
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </section>
 
-    <footer>
+      <!-- =========================================================
+           LOS 3 PILARES DE TRIUNFA GESTADORAS
+           ========================================================= -->
+      <section class="section-spacing">
+        <div class="section-header">
+          <span class="section-eyebrow">La Arquitectura</span>
+          <h2 class="section-title">Estrategia de Diosas y <em>Negocio Consciente</em></h2>
+          <p class="section-subtitle">
+            Aquí no venimos a elegir entre ganar dinero o tener paz. Venimos a construir un negocio consciente de alto impacto donde ambos coexisten.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pilar 1: Tono Nude -->
+          <article class="pillar-card pillar-card-1">
+            <span class="pillar-num">01</span>
+            <span class="pillar-tag">Oferta y Resonancia</span>
+            <h3 class="pillar-title">Comparte tu medicina sin culpa</h3>
+            <p class="pillar-desc">
+              Estructuramos ofertas magnéticas que resuenan profundamente con clientas dispuestas a pagar lo que realmente vales, honrando tu sabiduría y entrega.
+            </p>
+            <div class="pillar-footer-label">
+              Soberanía en Tarifas
+            </div>
+          </article>
+
+          <!-- Pilar 2: Tono Mauve -->
+          <article class="pillar-card pillar-card-2">
+            <span class="pillar-num">02</span>
+            <span class="pillar-tag">Liderazgo Uterino</span>
+            <h3 class="pillar-title">Sostén tu GranDiosidad</h3>
+            <p class="pillar-desc">
+              Desarrollamos una mentalidad de liderazgo expansivo para que ocupar espacio, liderar y facturar en grande se sienta natural, orgánico y seguro en tu cuerpo.
+            </p>
+            <div class="pillar-footer-label">
+              Expansión del Contenedor
+            </div>
+          </article>
+
+          <!-- Pilar 3: Tono Sage -->
+          <article class="pillar-card pillar-card-3">
+            <span class="pillar-num">03</span>
+            <span class="pillar-tag">Filosofía Slow Business</span>
+            <h3 class="pillar-title">Estrategia a tu propio ritmo</h3>
+            <p class="pillar-desc">
+              Implementamos sistemas de marketing y ventas adaptados a tus ciclos, eliminando el desgaste y maximizando la abundancia con previsibilidad.
+            </p>
+            <div class="pillar-footer-label">
+              Ventas a Fuego Lento
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           LA GRAN TRANSFORMACIÓN (DE -> A)
+           ========================================================= -->
+      <section class="transform-wrapper">
+        <div class="section-header" style="margin-bottom: 2.5rem;">
+          <span class="section-eyebrow">Evolución</span>
+          <h2 class="section-title">Lo que transformamos <em>juntas</em></h2>
+          <p class="section-subtitle">Tres saltos cuánticos en tu manera de liderar y facturar</p>
+        </div>
+
+        <div class="transform-row">
+          <div class="transform-from">
+            <h4>De la autocensura</h4>
+            <p>Aprenderás a mostrarte sin filtros, ocupando el lugar de referente que te corresponde en el mundo.</p>
+          </div>
+          <div class="transform-arrow-box">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="transform-to">
+            <h4>Al liderazgo magnético</h4>
+            <p>Visibilidad auténtica, voz propia y presencia soberana que atrae a las clientas ideales sin forzar.</p>
+          </div>
+        </div>
+
+        <div class="transform-row">
+          <div class="transform-from">
+            <h4>De la inestabilidad</h4>
+            <p>Ventas impredecibles, angustia financiera y dependencia del esfuerzo extenuante para sostenerte.</p>
+          </div>
+          <div class="transform-arrow-box">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="transform-to">
+            <h4>A la soberanía financiera</h4>
+            <p>Diseñaremos un modelo de precios y productos que te permita autosostenerte con holgura, claridad y previsibilidad.</p>
+          </div>
+        </div>
+
+        <div class="transform-row">
+          <div class="transform-from">
+            <h4>De la improvisación y la niña buena</h4>
+            <p>Ventas que se sienten como una montaña rusa y miedo a fijar límites sagrados a tus tarifas.</p>
+          </div>
+          <div class="transform-arrow-box">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+          <div class="transform-to">
+            <h4>A la estructura de Diosa</h4>
+            <p>Integrarás procesos comerciales limpios, elegantes y altamente rentables para disfrutar el camino.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           QUIÉN TE ACOMPAÑA (AUTORIDAD & CONEXIÓN)
+           ========================================================= -->
+      <section class="mentor-section">
+        <div class="mentor-photo-wrap">
+          <div class="mentor-photo-bg"></div>
+          <div class="mentor-photo-frame">
+            <img src="assets/saulibeth-hero.png" alt="Saulibeth Rivas" loading="lazy">
+          </div>
+          <div class="mentor-seal-badge">
+            <span class="seal-monogram">SR</span>
+            <span class="seal-sub">Mentora</span>
+          </div>
+        </div>
+
+        <div class="mentor-content">
+          <span class="section-eyebrow">Tu espacio de guía</span>
+          <h2>Liderazgo con alma uterina y estrategia de Diosa</h2>
+          <span class="mentor-tagline">acompañando tu expansión</span>
+
+          <div class="mentor-bio">
+            <p>
+              No te enseño teoría sacada de manuales corporativos fríos. Te acompaño desde la experiencia real de quien ha transitado el camino entre la expansión personal y la estructuración de negocios digitales.
+            </p>
+            <p>
+              Mi propósito es simple: que tu marca deje una huella imborrable y una facturación acorde al impacto real que entregas al mundo.
+            </p>
+          </div>
+
+          <div class="mentor-signature">
+            <div class="signature-script">Saulibeth Rivas</div>
+            <div class="signature-title">Psicóloga & Mentora de Negocios Conscientes</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           CAJA DE OFERTA IRRESISTIBLE & INVERSIÓN
+           ========================================================= -->
+      <section class="offer-box-wrapper" id="inversion">
+        <div class="offer-box">
+          <div class="offer-ribbon">
+            Inscripción Exclusiva · Triunfa Gestadoras
+          </div>
+
+          <div class="offer-content">
+            <span class="section-eyebrow">Tu gran salto empieza hoy</span>
+            <h2 class="offer-title">Triunfa Gestadoras</h2>
+            <p class="offer-promise">
+              Un espacio de aceleración, mentoría y estrategia diseñado exclusivamente para mujeres que están listas para habitar su soberanía financiera y expandir su liderazgo uterino.
+            </p>
+
+            <div class="offer-price-area">
+              <span class="price-tag-sub">Inversión del Programa</span>
+              <div class="price-value">
+                <span class="price-currency">$</span>550
+              </div>
+              <p class="price-terms">Pago único o facilidades en cuotas</p>
+            </div>
+
+            <div class="includes-grid">
+              <div class="include-item">
+                <span class="include-dash">—</span>
+                <span><strong>Estructura de Ofertas Magnéticas:</strong> Diseñadas para que tus clientas ideales paguen con deleite.</span>
+              </div>
+              <div class="include-item">
+                <span class="include-dash">—</span>
+                <span><strong>Liderazgo Uterino y Somático:</strong> Desbloquea la capacidad de sostener tu grandeza en tu cuerpo.</span>
+              </div>
+              <div class="include-item">
+                <span class="include-dash">—</span>
+                <span><strong>Sistemas Slow Business:</strong> Comercialización alineada a tus tiempos sin quemar tu energía vital.</span>
+              </div>
+              <div class="include-item">
+                <span class="include-dash">—</span>
+                <span><strong>Espacio Íntimo de Mentoría:</strong> Acompañamiento directo para aterrizar tu plan de facturación.</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 1.5rem;">
+              <a href="https://wa.me/584122570591?text=Hola%20Saulibeth,%20quiero%20asegurar%20mi%20plaza%20en%20Triunfa%20Gestadoras." target="_blank" class="btn-luxury-primary">
+                Obtener Programa
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           PREGUNTAS FRECUENTES (FAQ ACORDEÓN)
+           ========================================================= -->
+      <section class="faq-wrapper">
+        <div class="section-header">
+          <span class="section-eyebrow">Claridad</span>
+          <h2 class="section-title">Preguntas <em>Frecuentes</em></h2>
+          <p class="section-subtitle">Respuestas a tus dudas antes de iniciar</p>
+        </div>
+
+        <div class="faq-accordion">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">¿Para quién está diseñado este espacio?</span>
+              <span class="faq-toggle-sign">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Acompaño a mujeres visionarias del área de bienestar (terapeutas, psicólogas, coaches, mentoras) a destrabar su potencialidad, sostener su GranDiosidad y expandir su medicina con soberanía financiera.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question">
+              <span class="faq-question-text">¿Qué diferencia a Triunfa Gestadoras de otros programas?</span>
+              <span class="faq-toggle-sign">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                No te enseño fórmulas corporativas frías ni exigencias de quemarte en redes. Trabajamos bajo la metodología Slow Business: conectar con tu fuego creativo, honrar tus ciclos y construir sistemas de ventas limpios y rentables.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================
+       FOOTER
+       ========================================================= -->
+  <footer>
     <a href="index.html" class="footer-logo">Saulibeth</a>
+    <div class="footer-social-links">
+      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://www.youtube.com/@saulibethrivas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
     <p class="footer-copy">&copy; 2026 Saulibeth Rivas. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- =========================================================
+       SCRIPTS
+       ========================================================= -->
   <script>
+    // 1. Sidebar y navegación móvil
     const hamburgerBtn = document.getElementById('hamburgerBtn');
     const sidebar = document.getElementById('sidebar');
     const sidebarClose = document.getElementById('sidebarClose');
@@ -501,21 +1451,69 @@
     function toggleSidebar() {
       sidebar.classList.toggle('open');
       sidebarOverlay.classList.toggle('active');
-      if(sidebar.classList.contains('open')) document.body.style.overflow = 'hidden'; else document.body.style.overflow = '';
+      document.body.style.overflow = sidebar.classList.contains('open') ? 'hidden' : '';
     }
 
-    hamburgerBtn.addEventListener('click', toggleSidebar);
-    sidebarClose.addEventListener('click', toggleSidebar);
-    sidebarOverlay.addEventListener('click', toggleSidebar);
+    if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleSidebar);
+    if (sidebarClose) sidebarClose.addEventListener('click', toggleSidebar);
+    if (sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
 
+    // 2. Header blur
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 40) {
         header.style.background = 'rgba(239, 230, 227, 0.98)';
-        header.style.boxShadow = '0 4px 20px rgba(151,27,37,0.05)';
+        header.style.boxShadow = '0 4px 20px rgba(151,27,37,0.06)';
       } else {
         header.style.background = 'rgba(239, 230, 227, 0.93)';
         header.style.boxShadow = 'none';
       }
+    });
+
+    // 3. BARRA PERSISTENTE DE COMPRA (Sticky Buy Bar)
+    // Se activa suavemente al hacer scroll hacia abajo (después de 280px)
+    // Se oculta inteligentemente cuando la tarjeta de inversión está en pantalla para no superponerse
+    const stickyBuyBar = document.getElementById('stickyBuyBar');
+    const offerSection = document.getElementById('inversion');
+
+    window.addEventListener('scroll', () => {
+      const isScrolled = window.scrollY > 280;
+      let isOverOffer = false;
+
+      if (offerSection) {
+        const rect = offerSection.getBoundingClientRect();
+        // Si el botón final de la oferta ya es visible en la ventana, ocultar la barra flotante
+        if (rect.top < window.innerHeight - 100 && rect.bottom > 120) {
+          isOverOffer = true;
+        }
+      }
+
+      if (isScrolled && !isOverOffer) {
+        stickyBuyBar.classList.add('visible');
+      } else {
+        stickyBuyBar.classList.remove('visible');
+      }
+    });
+
+    // 4. FAQ Acordeón
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+      const questionBtn = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+
+      questionBtn.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        faqItems.forEach(otherItem => {
+          otherItem.classList.remove('active');
+          const otherAnswer = otherItem.querySelector('.faq-answer');
+          if (otherAnswer) otherAnswer.style.maxHeight = null;
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
     });
   </script>
 </body>

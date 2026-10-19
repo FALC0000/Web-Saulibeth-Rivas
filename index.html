@@ -218,13 +218,13 @@
       overflow: hidden;
     }
     .hero-layout {
-      max-width: 1140px;
+      max-width: 1200px;
       width: 100%;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6rem;
-      align-items: center;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 5rem;
+      align-items: start;
       z-index: 1;
     }
     .hero-content {
@@ -232,10 +232,10 @@
     }
     .hero-title {
       font-family: var(--font-script);
-      font-size: clamp(4rem, 8vw, 7rem);
+      font-size: clamp(3.8rem, 7vw, 6.5rem);
       color: var(--color-rojo);
       line-height: 1.05;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
       position: relative;
     }
     .hero-title::after {
@@ -244,21 +244,94 @@
       width: 60px;
       height: 1px;
       background: var(--color-rojo);
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
       opacity: 0.5;
     }
-    .hero-body-text {
+    
+    .hero-manifesto {
       font-family: var(--font-serif);
-      font-size: clamp(1.2rem, 3vw, 1.45rem);
-      line-height: 1.8;
+      font-size: clamp(1.12rem, 1.8vw, 1.25rem);
+      line-height: 1.85;
       color: var(--text-dark);
       margin-bottom: 2rem;
-      max-width: 500px;
     }
-    .highlight { color: var(--color-rojo); font-weight: 600; font-style: italic; }
+    .hero-paragraph {
+      margin-bottom: 1.4rem;
+      font-weight: 300;
+    }
+    .hero-paragraph em {
+      font-style: italic;
+      color: var(--color-rojo);
+    }
+    .drop-cap {
+      float: left;
+      font-family: var(--font-serif);
+      font-size: 3.8rem;
+      line-height: 0.82;
+      padding-top: 4px;
+      padding-right: 10px;
+      padding-bottom: 2px;
+      color: var(--color-rojo);
+      font-weight: 600;
+    }
+    .hero-manifesto-highlight {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2vw, 1.4rem);
+      font-style: italic;
+      color: var(--color-vinotinto);
+      margin: 1.8rem 0;
+      padding-left: 1.4rem;
+      border-left: 2px solid var(--color-rojo);
+      line-height: 1.6;
+    }
+    .hero-mission-statement {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      background: rgba(224, 188, 175, 0.28);
+      border-left: 3px solid var(--color-rojo);
+      padding: 1.3rem 1.6rem;
+      border-radius: 0 8px 8px 0;
+      line-height: 1.7;
+      margin: 2rem 0;
+    }
+    .hero-cta-wrapper {
+      margin-top: 2rem;
+    }
+    .btn-hero-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--color-rojo);
+      color: var(--color-crema);
+      padding: 1.15rem 2.8rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 30px rgba(151, 27, 37, 0.25);
+      transition: all 0.4s var(--ease-out);
+    }
+    .btn-hero-primary:hover {
+      background: var(--color-vinotinto);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(102, 10, 17, 0.35);
+      color: #ffffff;
+    }
+    .btn-hero-primary i {
+      transition: transform 0.3s var(--ease-out);
+    }
+    .btn-hero-primary:hover i {
+      transform: translateX(4px);
+    }
     
     .hero-image-wrapper {
-      position: relative;
+      position: sticky;
+      top: 110px;
       display: flex;
       justify-content: flex-end;
     }
@@ -443,6 +516,124 @@
       text-align: right;
     }
 
+    /* === Podcast Section (Integrated Media Showcase) === */
+    .podcast-section {
+      padding: 8rem 2rem 9rem;
+      background-color: #DBC8C3;
+      background-image: radial-gradient(rgba(102, 10, 17, 0.04) 1px, transparent 1px), linear-gradient(160deg, #E6D7D4 0%, #D5BFBA 100%);
+      background-size: 28px 28px, 100% 100%;
+      position: relative;
+    }
+    .podcast-inner {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .podcast-header {
+      margin-bottom: 3.5rem;
+    }
+    .podcast-eyebrow {
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      color: var(--color-rojo);
+      display: block;
+      margin-bottom: 0.8rem;
+      font-weight: 700;
+    }
+    .podcast-title {
+      font-family: var(--font-script);
+      font-size: clamp(3.8rem, 7vw, 5.5rem);
+      color: var(--color-vinotinto);
+      line-height: 1;
+      margin-bottom: 1.2rem;
+    }
+    .podcast-desc {
+      font-family: var(--font-serif);
+      font-size: clamp(1.2rem, 2.5vw, 1.45rem);
+      color: var(--text-dark);
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+    
+    .podcast-video-card {
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(102, 10, 17, 0.18);
+      background: #000;
+      border: 1px solid rgba(151, 27, 37, 0.1);
+      margin-bottom: 3.5rem;
+      transition: transform 0.4s var(--ease-out), box-shadow 0.4s var(--ease-out);
+    }
+    .podcast-video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 35px 80px rgba(102, 10, 17, 0.24);
+    }
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+    }
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    .podcast-channel-cta {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      background: #ffffff;
+      padding: 2.8rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 15px 40px rgba(102, 10, 17, 0.07);
+      border: 1px solid rgba(185, 149, 144, 0.4);
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .podcast-cta-text {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--color-vinotinto);
+      font-weight: 400;
+    }
+    .btn-youtube {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      background: var(--color-vinotinto);
+      color: var(--color-crema);
+      padding: 1.1rem 2.6rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-weight: 700;
+      font-size: 0.95rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transition: all 0.35s var(--ease-out);
+      box-shadow: 0 10px 28px rgba(102, 10, 17, 0.28);
+    }
+    .btn-youtube:hover {
+      background: var(--color-rojo);
+      transform: translateY(-2px);
+      box-shadow: 0 15px 35px rgba(151, 27, 37, 0.35);
+      color: #ffffff;
+    }
+    .btn-youtube i {
+      font-size: 1.25rem;
+      color: #ffffff;
+    }
+
     /* === WhatsApp Float === */
     .whatsapp-btn {
       position: fixed;
@@ -489,14 +680,23 @@
       header { padding: 1rem 1.5rem 1rem 4.5rem; }
       .header-social { display: none; }
       
-      .hero-layout { grid-template-columns: 1fr; gap: 4rem; padding-top: 2rem; }
-      .hero-title { font-size: clamp(3.5rem, 12vw, 4.5rem); text-align: center; }
-      .hero-title::after { margin: 1.5rem auto 0; }
-      .hero-body-text { text-align: center; max-width: 100%; }
-      .hero-image-wrapper { justify-content: center; }
+      .hero-layout { grid-template-columns: 1fr; gap: 3rem; padding-top: 1rem; }
+      .hero-image-wrapper {
+        position: static;
+        order: -1;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+      }
+      .hero-image { max-width: 320px; }
+      .hero-title { font-size: clamp(3.2rem, 11vw, 4.2rem); text-align: center; }
+      .hero-title::after { margin: 1.2rem auto 0; }
+      .hero-manifesto { text-align: left; }
+      .hero-cta-wrapper { text-align: center; }
       .book-inner { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
       .book-watermark { font-size: 25vw; top: 30%; }
       .book-desc { margin: 0 auto 2.5rem; }
+      .podcast-section { padding: 5rem 1.5rem 6rem; }
+      .podcast-channel-cta { padding: 2rem 1.5rem; }
       .editorial-link { flex-direction: column; gap: 1rem; align-items: flex-start; }
       .editorial-desc { text-align: left; }
       .whatsapp-btn { bottom: 1.5rem; right: 1.5rem; width: 56px; height: 56px; font-size: 1.8rem; }
@@ -511,9 +711,9 @@
     <ul class="sidebar-nav">
       <li><a href="#inicio">Inicio</a></li>
       <li><a href="#libro">Mi Libro</a></li>
+      <li><a href="#podcast">Podcast</a></li>
       <hr class="sidebar-divider">
-      <li><a href="cursos.html">Cursos</a></li>
-      <li><a href="podcast.html">Podcast</a></li>
+      <li><a href="cursos.html">Programas</a></li>
       <li><a href="testimonios.html">Testimonios</a></li>
       <hr class="sidebar-divider">
       <li><a href="contacto.html">Contacto</a></li>
@@ -543,11 +743,19 @@
       <div class="hero-layout">
         <div class="hero-content fade-up">
           <h1 class="hero-title">Saulibeth Rivas</h1>
-          <p class="hero-body-text delay-1">
-            Soy una mentora de bienestar con más de 12 años de experiencia en el mundo del <span class="highlight">Crecimiento Personal</span>, reconocida por mis facilitados en sus transformaciones personales y de bienestar.<br><br>
-            Integro toda mi carrera profesional con mi desarrollo del ser, para impulsar mujeres en todo el mundo y llevarlas a triunfar con balance.<br><br>
-            Tengo mi corazón al servicio de la vida, de la manifestación del bienestar en cada mujer que llega a mi lado para crecer.
-          </p>
+          <div class="hero-manifesto delay-1">
+            <p class="hero-paragraph"><span class="drop-cap">V</span>engo de largas batallas en el campo de lo masculino: logros a base de sobreexigencia, máscaras de supervivencia, listas de <em>deberías</em> y la ocultación de mi alma para encajar en estructuras que me apagaban. Un camino árido donde valía solo si me desgarraba en el triunfo del cansancio.</p>
+            
+            <p class="hero-paragraph">Hoy habito mis aguas. Aprendí a honrar mi sangre, mi linaje y el poder sagrado de ser mujer: una productividad marcada por la ciclicidad, la intuición y la abundancia de vivir creativamente sin quemarme en el intento.</p>
+            
+            <p class="hero-mission-statement">Por eso ahora me dedico a acompañar mujeres a crear emprendimiento y negocios conscientes con tu propia voz, tu verdad, encarnados desde tu poder femenino.</p>
+            
+            <div class="hero-cta-wrapper">
+              <a href="cursos.html" class="btn-hero-primary">
+                Ver Programas <i class="fa fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
         </div>
         <div class="hero-image-wrapper fade-up delay-2">
           <img src="assets/saulibeth-hero.png" alt="Saulibeth Rivas - Mentora de Bienestar" class="hero-image">
@@ -574,20 +782,47 @@
       </div>
     </section>
 
+    <section class="podcast-section" id="podcast">
+      <div class="podcast-inner fade-up">
+        <div class="podcast-header">
+          <span class="podcast-eyebrow">Espacio de Expansión</span>
+          <h2 class="podcast-title">Podcast</h2>
+          <p class="podcast-desc">
+            Un espacio sagrado para compartir conversaciones, herramientas e inspiración que transformarán tu vida y tu emprendimiento desde adentro.
+          </p>
+        </div>
+        
+        <div class="podcast-featured-wrapper">
+          <div class="podcast-video-card">
+            <div class="video-responsive">
+              <iframe 
+                src="https://www.youtube.com/embed/h_0XWPWSUFI?rel=0" 
+                title="Último Episodio del Podcast de Saulibeth Rivas" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+        
+        <div class="podcast-channel-cta">
+          <p class="podcast-cta-text">Para ver todos los episodios visita:</p>
+          <a href="https://www.youtube.com/@saulibethrivas" target="_blank" class="btn-youtube" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i> Canal de YouTube de Saulibeth
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="explore-section">
       <div class="explore-inner">
         <h2 class="explore-title">Sigue Explorando</h2>
         <ul class="editorial-list">
           <li class="editorial-item">
             <a href="cursos.html" class="editorial-link">
-              <span class="editorial-name">Cursos</span>
-              <span class="editorial-desc">Programas de acompañamiento y talleres para transformar tu negocio desde el alma.</span>
-            </a>
-          </li>
-          <li class="editorial-item">
-            <a href="podcast.html" class="editorial-link">
-              <span class="editorial-name">Podcast</span>
-              <span class="editorial-desc">Episodios llenos de sabiduría, inspiración y herramientas para tu vida diaria.</span>
+              <span class="editorial-name">Programas</span>
+              <span class="editorial-desc">Descubre todos nuestros programas de aceleración, liderazgo consciente y bienestar.</span>
             </a>
           </li>
           <li class="editorial-item">
