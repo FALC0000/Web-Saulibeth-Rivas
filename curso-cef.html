@@ -943,6 +943,29 @@
        RESPONSIVE & MOBILE DESIGN (100% ADAPTADO A MÓVILES)
        ========================================================= */
     @media (max-width: 768px) {
+      .sidebar {
+        width: 320px;
+        max-width: 88vw;
+        padding: 4.2rem 1.6rem 3rem;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-y: contain;
+      }
+      .sidebar-nav {
+        gap: 1.1rem;
+        margin-top: 0.8rem;
+      }
+      .sidebar-nav a {
+        font-size: 1.65rem;
+      }
+      .sidebar-divider {
+        margin: 1.15rem 0;
+      }
+      .sidebar-social-block {
+        margin-top: 1.6rem;
+        padding-top: 1.2rem;
+        padding-bottom: 2.5rem;
+      }
       body {
         font-size: 1rem;
         line-height: 1.68;
@@ -1187,11 +1210,46 @@
 
       /* Header mobile */
       header {
-        padding: 0.9rem 1.25rem 0.9rem 4.5rem;
+        padding: 0.65rem 0.85rem 0.65rem 62px;
+        min-height: 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .header-logo {
+        margin: 0 !important;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+        flex-shrink: 0;
+      }
+      .header-logo .script-name {
+        font-size: clamp(1.4rem, 4.4vw, 1.75rem);
+        line-height: 1;
+      }
+      .header-logo .serif-subtitle {
+        font-size: 0.58rem;
+        letter-spacing: 0.18em;
+        margin-top: 1px;
       }
       .header-social {
-        display: none;
+        display: flex !important;
+        position: static !important;
+        margin-left: auto;
+        gap: clamp(0.3rem, 1.6vw, 0.6rem);
+        align-items: center;
       }
+      .header-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 36px;
+        font-size: clamp(1.05rem, 3.2vw, 1.25rem);
+        color: var(--color-rojo);
+      }
+      .header-social { display: flex !important; }
       .header-logo .script-name {
         font-size: 2.1rem;
       }
@@ -1236,6 +1294,51 @@
         padding: 0 1rem;
       }
     }
+  
+    /* Sidebar Social Navigation (Unified Contrast & Brand Style) */
+/* Sidebar Social Navigation (Unified Contrast & Brand Style) */
+.sidebar-social-block {
+  margin-top: auto;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(239, 230, 227, 0.25);
+}
+.sidebar-social-label {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(239, 230, 227, 0.95);
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.sidebar-social-icons {
+  display: flex;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+.sidebar-social-icons a {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-out);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+.sidebar-social-icons a:hover {
+  background: #ffffff;
+  color: #971B25 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
   </style>
 </head>
 <body>
@@ -1254,6 +1357,16 @@
       <hr class="sidebar-divider">
       <li><a href="contacto.html">Contacto Directo</a></li>
     </ul>
+      <div class="sidebar-social-block">
+      <span class="sidebar-social-label">Sígueme en Redes</span>
+      <div class="sidebar-social-icons">
+        <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+        <a href="https://www.youtube.com/@saulibethrivas" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+        <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
   </nav>
 
   <!-- Botón Hamburguesa -->
@@ -1268,11 +1381,11 @@
       <span class="serif-subtitle">- RIVAS -</span>
     </a>
     <div class="header-social">
-      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://www.youtube.com/@saulibethrivas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+      <a href="https://www.youtube.com/@saulibethrivas" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" rel="noopener noreferrer" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
+      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
     </div>
   </header>
 
@@ -1568,17 +1681,42 @@
 
   <!-- Footer Fijo -->
   <footer>
-    <a href="index.html" class="footer-logo">Saulibeth Rivas</a>
-    <div class="footer-social-links">
-      <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
-      <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" aria-label="Telegram"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="https://www.youtube.com/@saulibethrivas" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+    <div class="footer-inner">
+      <a href="index.html" class="footer-monumental-name">Saulibeth Rivas</a>
+      <p class="footer-tagline">Mentora de Bienestar &amp; Soberanía Femenina</p>
+      
+      <div class="footer-social-section">
+        <span class="footer-social-label">Acompáñame en mis redes sociales</span>
+        <div class="footer-social-bar">
+          <a href="https://www.instagram.com/rivassaulibeth/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@rivas_saulibeth" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.youtube.com/@saulibethrivas" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://t.me/+IA5EclvWVjMuERb3" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="Telegram">
+            <i class="fa-brands fa-telegram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/saulibeth-rivas-59ba6620a/" target="_blank" rel="noopener noreferrer" class="footer-social-icon" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-nav-simple">
+        <a href="index.html">Inicio</a>
+        <a href="index.html#libro">Mi Libro</a>
+        <a href="index.html#podcast">Podcast</a>
+        <a href="cursos.html">Programas</a>
+        <a href="testimonios.html">Testimonios</a>
+        <a href="contacto.html">Contacto</a>
+      </div>
+
+      <p class="footer-copy">&copy; 2026 Saulibeth Rivas. Todos los derechos reservados.</p>
     </div>
-    <p class="footer-copy">
-      &copy; 2026 Saulibeth Rivas. Todos los derechos reservados.
-    </p>
   </footer>
 
   <!-- =========================================================
