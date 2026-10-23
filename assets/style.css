@@ -793,3 +793,15 @@
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
+
+/* Reset para botones de compra semánticos */
+button.btn-luxury-primary {
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+  cursor: pointer;
+  text-decoration: none;
+}
+.card-gestadoras .card-price {
+  color: #ffffff !important;
+}

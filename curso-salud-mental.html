@@ -1480,7 +1480,7 @@
 
           <div class="mentor-signature">
             <div class="signature-script">Saulibeth Rivas</div>
-            <div class="signature-title">Psicóloga & Mentora de Negocios Conscientes</div>
+            <div class="signature-title">Psicoterapeuta & Mentora de Negocios Conscientes</div>
           </div>
         </div>
       </section>
@@ -1529,10 +1529,18 @@
             </div>
 
             <div style="margin-top: 1.5rem;">
-              <a href="https://wa.me/584122570591?text=Hola%20Saulibeth,%20quiero%20información%20y%20agendar%20mi%20lugar%20en%20Triunfa%20con%20Salud%20Mental%20y%20Balance." target="_blank" class="btn-luxury-primary">
+              <button type="button" 
+                class="btn-luxury-primary checkout-btn" 
+                id="btnCheckoutSaludMental"
+                data-checkout-course="salud-mental"
+                data-course-name="Triunfa con Salud Mental y Balance"
+                data-price="1800"
+                data-currency="USD"
+                data-checkout-url=""
+                aria-label="Obtener Programa Triunfa con Salud Mental y Balance">
                 Obtener Programa
                 <i class="fa-solid fa-arrow-right"></i>
-              </a>
+              </button>
             </div>
           </div>
         </div>
@@ -1700,5 +1708,6 @@
       });
     });
   </script>
+  <script src="assets/checkout.js"></script>
 </body>
 </html>
